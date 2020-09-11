@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+{% load static %}
+<link rel="stylesheet" href="{% static 'main.css'%}">
+ <script type="text/javascript">
+ $(".hover").mouseleave(
+  function() {
+    $(this).removeClass("hover");
+  }
+);
+
+ </script>
+</head>
+<body>
+    <div id="titlediv">
+      <p id="title">IT's eat<br>
+      <small id="subtitle">기술면접을 위해 도전하세요!</small></p>
+    </div>
+    <form method='GET'>
+    <div id="QUIZ">
+      <p id="main">{{ quiz.title }}</p>
+    </div><br>
+    <div id="QUIZ">
+      <p id="main">{{ quiz.content }}</p>
+    </div>
+    <div id="titlediv">
+    
+    <p id="main">
+    <a href="{% url 'home' %}" class="smbutton">홈으로 가기</a>
+    <a href="{% url 'Quizpage' %}" class="smbutton">돌아가기</a></p>
+    </div>
+</form>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+{% load static %}
+<style type="text/css">
+ a:link { color: white; text-decoration: none;}
+ a:visited { color: white; text-decoration: none;}
+ a:hover{color: white;text-decoration: none !important}
+</style>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static 'main.css'%}">
+ <script type="text/javascript">
+ $(".hover").mouseleave(
+  function() {
+    $(this).removeClass("hover");
+  }
+);
+
+ </script>
+</head>
+<body>
+    <div id="titlediv">
+      <p id="title">IT's eat<br>
+      <small id="subtitle">기술면접을 위해 도전하세요!</small></p>
+    </div>
+  {% for quiz in posts %}
+    <div id="QUIZ">
+      <p id="main">{{ quiz.title }}</p>
+      <a class="smbutton" href ="{% url 'Quizdetail' quiz.id %}">답변 보기</a>
+    </div><br><br>
+  {% endfor %}
+    <div id="main">
+      {%if posts.has_previous%}
+        <a class="listbutton" href="?page=1"><button type="button" class="btn btn-dark">첫 번째 페이지</button></a>&nbsp&nbsp&nbsp
+      {%endif%}
+      {%if posts.has_next%}
+        <a href="?page={{posts.next_page_number}}"><button type="button" class="btn btn-dark">다음</button></a>&nbsp&nbsp&nbsp
+      {%endif%}
+    <span>{{posts.number}}</span>&nbsp
+    <span> of </span>&nbsp
+    <span>{{posts.paginator.num_pages}}</span>&nbsp&nbsp
+    {%if posts.has_previous%}
+        <a href="?page={{posts.previous_page_number}}"><button type="button" class="btn btn-dark">이전</button></a>&nbsp&nbsp&nbsp
+    {%endif%}
+      {%if posts.has_previous%}
+         <a class="listbutton" href="?page={{posts.previous_page_number}}"><button type="button" class="btn btn-dark">마지막 페이지</button></a>&nbsp&nbsp&nbsp
+      {%endif%}
+      <a class="listbutton" href="{% url 'home' %}"><button type="button" class="btn btn-dark">홈으로 가기</button></a>
+    </div>
+</body>
+</html>
