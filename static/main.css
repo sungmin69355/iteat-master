@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css?family=BenchNine:700');
+.a:link { color: #ffffff; text-decoration: none;}
+.a:visited { color: #ffffff; text-decoration: none;}
+.a:hover{color: #ffffff;text-decoration: none !important}
+.smbutton {
+  background-color: #c47135;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'BenchNine', Arial, sans-serif;
+  font-size: 1em;
+  font-size: 22px;
+  line-height: 1em;
+  margin: 15px 40px;
+  outline: none;
+  padding: 12px 40px 10px;
+  position: relative;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-decoration: none;
+}
+.smbutton:before,
+.smbutton:after {
+  border-color: transparent;
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
+  border-style: solid;
+  border-width: 0;
+  content: "";
+  height: 24px;
+  position: absolute;
+  width: 24px;
+}
+.smbutton:before {
+  border-color: #c47135;
+  border-right-width: 2px;
+  border-top-width: 2px;
+  right: -5px;
+  top: -5px;
+}
+.smbutton:after {
+  border-bottom-width: 2px;
+  border-color: #c47135;
+  border-left-width: 2px;
+  bottom: -5px;
+  left: -5px;
+}
+.smbutton:hover,
+.smbutton.hover {
+  background-color: #c47135;
+ 
+}
+.smbutton:hover:before,
+.smbutton.hover:before,
+.smbutton:hover:after,
+.smbutton.hover:after {
+  height: 100%;
+  width: 100%;
+}
+#titlediv {
+  padding: 20px;
+}
+#title {
+  padding: 10px;
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+#subtitle {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+#main {
+  padding: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+#QUIZ {
+  border: 5px;
+
+  padding: 10px;
+  text-align: center;
+  margin-left: 60px;
+  margin-right: 60px;
+  border-style: solid;
+  border-width: 5px;
+}
+
+#listbutton {
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+#listbutton:hover {
+
+  background: tomato; 
+
+  color: white;
+
+}
